@@ -1,7 +1,7 @@
 package com.example.kotlinmvvm
 
-data class BannerList(
-    var `data`: List<Banner>,
+data class ApiBody<T>(
+    var `data`: List<T>,
     var errorCode: Int,
     var errorMsg: String
 )

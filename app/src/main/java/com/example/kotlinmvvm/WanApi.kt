@@ -11,10 +11,10 @@ import retrofit2.http.GET
 interface WanApi {
 
     @GET("banner/json")
-    fun bannerList1(): Call<BannerList>
+    fun bannerList1(): Call<ApiBody<Banner>>
 
     @GET("banner/json")
-    fun bannerList2(): LiveData<Result<BannerList>>
+    fun bannerList2(): LiveData<Result<ApiBody<Banner>>>
 
 
     companion object {
