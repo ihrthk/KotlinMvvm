@@ -11,7 +11,12 @@ import java.lang.reflect.Type
 class LiveDataCallAdapter<T>(private val responseType: Type) :
     CallAdapter<T, LiveData<Result<T?>>> {
 
+    //static final class CallAdapted<ResponseT, ReturnT>
+    //Converter<ResponseBody, ResponseT> responseConverter,
+    //TypeAdapter<?> adapter = gson.getAdapter(TypeToken.get(type))
+    //callAdapter.responseType()
     override fun adapt(call: Call<T>): LiveData<Result<T?>> {
+        //LiveData<Result<BannerList>>
         val liveData = MutableLiveData<Result<T?>>()
         call.enqueue(object : Callback<T> {
             override fun onResponse(call: Call<T>, response: Response<T>) {
